@@ -1,0 +1,75 @@
+@import 'product-variables';
+.imgButton{
+    max-height: 60%;
+}
+.imgButton:hover{
+    cursor: pointer;    
+}
+.colorSelectorBar{
+    display: flex !important;
+    background-color: $color-bar;    
+    width: 60%;
+    justify-content: space-around;
+}
+
+.colorBar-show-hide {
+  transition: all linear 0.7s;
+}
+
+.colorBar-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.boxColor{
+    min-height: 2.5em;
+    min-width: 2.5em;
+    width: 20%;    
+}
+
+.paletteColor1{
+    @extend .boxColor;
+    background-color: $color-dark-red;    
+}
+
+.paletteColor2{
+    @extend .boxColor;
+    background-color: $color-blue;
+}
+
+.paletteColor3{
+    @extend .boxColor;
+    background-color: green;
+}
+
+.paletteColor4{
+    @extend .boxColor;
+    background-color: $color-yellow;
+}
+
+.paletteColor5{
+    @extend .boxColor;
+    background-color:purple;
+}
+
+.mainBar{
+    display: flex;
+    justify-content: space-between;    
+    flex-wrap: wrap;
+    min-height: 3.5em;  
+    margin-bottom: $space-between-rows;  
+}
+
+.functionsBar{
+    display: flex;
+    align-items: center;
+    background-color: $color-bar;
+    border: 1px solid $color-bar-border;
+    border-radius: $round-border;
+    width: 60%;    
+}
+
+.publishBar{
+    display: flex;
+    align-items: center;
+    width: 30%;
+}

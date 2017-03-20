@@ -1,0 +1,22 @@
+.titleIconSelected{
+    background-color: $color-yellow;
+}
+
+.titleIcon{
+  margin-top: 1%;  
+}
+
+.titleIconImg{
+  max-height: 3.125em;
+  max-width: 3.125em; 
+}
+
+.iconsModalBox{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.highligthBox{
+  border: 2px solid $color-yellow;
+  cursor: pointer;
+}

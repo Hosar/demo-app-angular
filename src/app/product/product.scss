@@ -1,0 +1,74 @@
+@import 'product-errors';
+@import 'product-variables';
+@import 'product-main-bar';
+@import 'product-info';
+@import 'product-img';
+
+section{    
+    border-radius: $round-border;
+    padding: 0;
+    min-height: 31.250em;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;   
+    overflow: hidden;    
+    background-color: $color-main;
+    animation-duration: 1.5s;
+    animation-name: appears;
+    header{
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        height: 4.3rem;
+        h1{
+            margin: 0;
+        }
+        @media screen and (min-width:$screen-min-width){
+            header{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    article{
+        display: flex;    
+        flex-wrap: wrap;        
+        div{
+            display: flex; 
+            align-items: center;           
+            margin: 0.2em;
+        }
+    }
+
+    @media screen and (min-width:$screen-min-width){
+        width: 60%;
+    }
+    
+}
+@keyframes appears{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+
+@media screen and (min-width:$screen-min-width){
+    .productInfoRow{
+        flex-direction: row;
+    }
+    .boldBorder{
+        width: 22%;
+    }
+
+    .mainIcon{
+        width: 10%;    
+    }
+
+    .descriptionBox{
+        width: 37%;
+    }
+}

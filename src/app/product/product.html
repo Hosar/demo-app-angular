@@ -1,0 +1,62 @@
+<section>
+      <header>
+            <h1>Submit your product</h1>
+      </header>
+      <div class="validationErrors">
+            <div ng-messages="vm.productForm.title.$error" ng-class="vm.errorColor" ng-if="vm.productForm.$submitted" role="alert">
+                  <div ng-message="required">Please provide a Title</div>
+            </div>
+            <div ng-messages="vm.productForm.description.$error" ng-class="vm.errorColor" ng-if="vm.productForm.$submitted" role="alert">
+                  <div ng-message="required">Please provide a Description</div>
+            </div>
+            <div ng-messages="vm.productForm.price.$error" ng-class="vm.errorColor" ng-if="vm.productForm.$submitted" role="alert">
+                  <div ng-message="required">Please provide a Price</div>
+            </div>
+      </div>
+      <article>
+            <div ng-show="vm.showColorSelector" class="colorSelectorBar colorBar-show-hide">
+                  <div ng-repeat="color in vm.paletteColors" ng-class="color"></div>
+            </div>
+      </article>
+      <ng-form name="vm.productForm">
+            <div class="mainBar">
+                  <div class="functionsBar">
+                        <img class="imgButton" src="assets/images/paint_brush.png" ng-click="vm.showColorSelectorBar();" alt="select color" />
+                  </div>
+                  <div class="publishBar">
+                        <a id='btnPublish' class="btn btn-primary btn-block" ng-click="vm.publishProduct();">
+                              Publish<img src="assets/images/Pre-Web_32x32.png"  alt="Publish product" />
+                        </a>
+                  </div>
+            </div>
+            <div class="productInfoRow">
+                  <div class="productMainIcon" ng-click="vm.openSelectIcon();">
+                        <img src="{{vm.imgPathTitleIcon}}" class="title-Icon">
+                  </div>
+
+                  <textarea name="title" class="productInfoBorder" ng-model="vm.productInfo.title" placeholder="{{vm.initialTexts[0]}}" required/>
+                  <textarea name="description" class="productInfoBorder" ng-model="vm.productInfo.description" placeholder="{{vm.initialTexts[1]}}"
+                        required />
+                  <textarea name="price" ng-keypress="vm.onlyNumbers($event);" class="productInfoBorder" ng-model="vm.productInfo.price" placeholder="{{vm.initialTexts[2]}}"
+                        required/>
+            </div>
+            <div class="productFileUpload">
+                  <div class="fileDropBox" ng-model="vm.productInfo.imgFile" file-Drop>
+                        Drop images here to upload
+                  </div>
+                  <div class="fileUploadBox">
+                        <span class="btn btn-primary btn-file">
+                           <i class="glyphicon glyphicon-paperclip"></i>
+                         Upload Image <input type="file" file-Upload ng-model="vm.productInfo.imgFile">
+                        </span>
+
+                  </div>
+            </div>
+            <div class="productImageRow">
+                  <div class="productImageBox">
+                        <img class="img-circle" src="{{vm.productInfo.imgFile}}" alt="">
+                  </div>
+            </div>
+
+      </ng-form>
+</section>

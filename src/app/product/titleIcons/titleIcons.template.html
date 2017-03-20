@@ -1,0 +1,19 @@
+<div role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <button type="button" class="close" aria-label="Close" ng-click="vm.cancelTitleIcons();">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title">{{ vm.title }}</h3>
+        </div>
+        <div class="iconsModalBox">
+            <div class="titleIcon" ng-repeat="icon in vm.iconsList" ng-click="vm.markSelected($event , icon );">
+                <img class="titleIconImg" src="{{icon}}" />
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="vm.okIconsTitle();">OK</button>
+            <button class="btn btn-warning" ng-click="vm.cancelTitleIcons()">Cancel</button>
+        </div>
+    </div>
+</div>

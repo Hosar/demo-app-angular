@@ -1,0 +1,10 @@
+@import 'product-variables';
+.errorColor{
+    color: $color-dark-red;    
+}
+
+.validationErrors{
+    background-color: #ffff99;
+    margin-bottom: $space-between-rows;
+    border-radius: $round-border;
+}
